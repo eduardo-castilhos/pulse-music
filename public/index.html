@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulse Music</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>Pulse Music</h1>
+    <p class="subtitulo">Clique, fale o nome da música e ela toca sozinha.</p>
+
+    <button id="btnEscutar" class="botao-orbe" type="button">
+      <span class="orbe"></span>
+      <span class="rotulo">Comece a escutar</span>
+    </button>
+
+    <p id="status" class="status" aria-live="polite"></p>
+    <p id="transcricao" class="transcricao"></p>
+
+    <div id="resultado" class="resultado escondido">
+      <img id="thumb" class="thumb" alt="" />
+      <div class="info">
+        <p id="tituloVideo" class="titulo-video"></p>
+        <p id="canalVideo" class="canal-video"></p>
+      </div>
+    </div>
+
+    <div id="player"></div>
+
+    <button id="btnTocarManual" class="botao-tocar escondido" type="button">
+      ▶ Tocar (o navegador bloqueou o autoplay)
+    </button>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
