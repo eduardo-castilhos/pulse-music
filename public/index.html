@@ -4,20 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pulse Music</title>
+  <link rel="icon" type="image/jpeg" href="images/avatar.jpg" />
+  <link rel="apple-touch-icon" href="images/avatar.jpg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="app">
     <h1>Pulse Music</h1>
-    <p class="subtitulo">Clique, fale o nome da música e ela toca sozinha.</p>
+    <p class="subtitulo">Fale o nome, descreva a música ou peça uma lista — e converse com a IA.</p>
+
+    <div class="seletor-fonte" role="tablist">
+      <button type="button" class="fonte-btn ativo" data-fonte="youtube">▶ YouTube</button>
+      <button type="button" class="fonte-btn" data-fonte="local">🎧 Minhas músicas</button>
+    </div>
+
+    <div id="areaUpload" class="area-upload escondido">
+      <button type="button" id="btnAtualizarBiblioteca" class="botao-upload">🔄 Atualizar minhas músicas</button>
+      <p id="listaArquivos" class="lista-arquivos">Nenhuma música encontrada na pasta "musics".</p>
+    </div>
 
     <button id="btnEscutar" class="botao-orbe" type="button">
-      <span class="orbe"></span>
+      <span class="orbe">
+        <img class="avatar-orbe" src="images/avatar.jpg" alt="" onerror="this.style.display='none'" />
+      </span>
       <span class="rotulo">Comece a escutar</span>
     </button>
 
     <p id="status" class="status" aria-live="polite"></p>
-    <p id="transcricao" class="transcricao"></p>
+
+    <div id="chatLog" class="chat-log" aria-live="polite"></div>
 
     <div id="resultado" class="resultado escondido">
       <img id="thumb" class="thumb" alt="" />
@@ -28,6 +43,7 @@
     </div>
 
     <div id="player"></div>
+    <audio id="audioLocal" class="audio-local escondido" controls></audio>
 
     <button id="btnTocarManual" class="botao-tocar escondido" type="button">
       ▶ Tocar (o navegador bloqueou o autoplay)
